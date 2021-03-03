@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Zombie Slayer</title>
+<style>
+#killZombie {
+                display: none;
+            }
+#Zombie {
+                display: none;   
+            }
+            .head {
+                width: 100px;
+                height: 100px;
+                background-color: green;
+                border-radius: 50%;
+            }
+            .left-eye {
+                width: 20px;
+                height: 20px;
+                background-color: white;
+                position: relative;
+                top: -70px;
+                left: 15px;
+                border-radius: 30%;
+            }
+            .left-pupil {
+                width: 10px;
+                height: 10px;
+                background-color: red;
+                position: relative;
+                top: -85px;
+                left: 20px;
+                border-radius: 30%;
+            }
+            .right-eye {
+                width: 20px;
+                height: 20px;
+                background-color: white;
+                position: relative;
+                top: -100px;
+                left: 60px;
+                border-radius: 30%;
+            }
+            .right-pupil {
+                width: 10px;
+                height: 10px;
+                background-color: red;
+                position: relative;
+                top: -115px;
+                left: 65px;
+                border-radius: 30%;
+            }
+            .mouth {
+                width: 50px;
+                height: 10px;
+                background-color: black;
+                border-radius: 70%;
+                position: relative;
+                top: -95px;
+                left: 23px;
+            }
+            .mouthBlood {
+                width: 10px;
+                height: 30px;
+                background-color: red;
+                border-radius: 70%;
+                position: relative;
+                top: -100px;
+                left: 30px;
+            }
+            .neck {
+                width: 10px;
+                height: 20px;
+                background-color: green;
+                position: relative;
+                top: -110px;
+                left: 43px;
+                border-radius: 15%;
+            }
+            .torso {
+                width: 80px;
+                height: 170px;
+                background-color: green;
+                position: relative;
+                left: 10px;
+                top: -112px;
+                border-radius: 20%;
+            }
+            .left-arm {
+                width: 20px;
+                height: 170px;
+                background-color: green;
+                position: relative;
+                left: 0px;
+                top: -277px;
+                border-radius: 15%;
+            }
+            .shoulder-part-one {
+                width: 20px;
+                height: 15px;
+                background-color: green;
+                position: relative;
+                top: -280px;
+                left: 0px;
+                border-radius: 15%;
+                z-index: 2;
+            }
+            .shoulder-part-two {
+                width: 22px;
+                height: 15px;
+                background-color: green;
+                border-radius: 100%;
+                position: relative;
+                top: -283px;
+                left: -1.5px;
+                z-index: 1;
+            }
+            .right-arm {
+                width: 20px;
+                height: 170px;
+                background-color: green;
+                position: relative;
+                left: 80px;
+                top: -478px;
+                border-radius: 15%;
+            }
+            .shoulder-part-three {
+                width: 20px;
+                height: 15px;
+                background-color: green;
+                position: relative;
+                top: -481px;
+                left: 80px;
+                border-radius: 15%;
+                z-index: 2;
+            }
+            .shoulder-part-four {
+                width: 22px;
+                height: 15px;
+                background-color: green;
+                border-radius: 100%;
+                position: relative;
+                top: -483px;
+                left: 79px;
+                z-index: 1;
+            }
+            .left-leg {
+                width: 10px;
+                height: 120px;
+                background-color: green;
+                position: relative;
+                top: -513px;
+                left: 30px;
+            }
+            .right-leg {
+                width: 10px;
+                height: 120px;
+                background-color: green;
+                position: relative;
+                top: -633px;
+                left: 60px;
+            }
+            #kill {
+                display: none;
+            }
+</style>
+</head>
+<body>
+<button onclick="transitionZombie()" id="Spawn">Spawn Zombie!</button>
+        <button id="killZombie" onclick="showSure()">Kill Zombie</button>
+        <form id="kill">
+        <input type="text" placeholder="Are You Sure?" required>
+        <button onclick="killZombie()">ENTER</button>
+        </form>
+        <div id="Zombie">
+        <div id="headFull">
+        <div class="head"></div>
+        <div class="left-eye"></div>
+        <div class="left-pupil"></div>
+        <div class="right-eye"></div>
+        <div class="right-pupil"></div>
+        <div class="mouth"></div>
+        <div class="mouthBlood"></div>
+        <div class="neck"></div>
+        </div>
+        <div class="torso"></div>
+        <div class="left-arm"></div>
+        <div class="shoulder-part-one"></div>
+        <div class="shoulder-part-two"></div>
+        <div class="right-arm"></div>
+        <div class="shoulder-part-three"></div>
+        <div class="shoulder-part-four"></div>
+        <div class="left-leg"></div>
+        <div class="right-leg"></div>
+        </div>
+        <script>
+            function transitionZombie() {
+                var zomb = document.getElementById("Zombie");
+                zomb.style.display = "block";
+            }
+        </script>
+        <script>
+            function killZombie() {
+                var head = document.getElementById("headFull");
+                head.style.display = "none";
+            }
+        </script>
+        <script>
+            function showSure() {
+                var form = document.getElementById("kill");
+                form.style.display = "block";
+            }
+        </script>
+</body>
+</html>
